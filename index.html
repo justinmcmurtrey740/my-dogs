@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meeting My Dogs</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Georgia, serif;
+      background-color: #fdf6ee;
+      color: #333;
+    }
+
+    header {
+      background-color: #3b2a1a;
+      color: #fff;
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      letter-spacing: 2px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin-top: 10px;
+      color: #d4b896;
+    }
+
+    .dogs-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .dog-card {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      width: 300px;
+      overflow: hidden;
+      transition: transform 0.2s;
+    }
+
+    .dog-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .dog-card img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+    }
+
+    .dog-info {
+      padding: 24px;
+    }
+
+    .dog-info h2 {
+      font-size: 1.8rem;
+      color: #3b2a1a;
+      margin-bottom: 6px;
+    }
+
+    .dog-info .breed {
+      font-size: 0.95rem;
+      color: #a0785a;
+      font-style: italic;
+      margin-bottom: 14px;
+    }
+
+    .dog-info p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #555;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      background-color: #3b2a1a;
+      color: #d4b896;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Meeting My Dogs</h1>
+    <p>Three dogs, one happy home.</p>
+  </header>
+
+  <div class="dogs-container">
+
+    <div class="dog-card">
+      <img src="images/Buddy.png" alt="Buddy the Black Lab" />
+      <div class="dog-info">
+        <h2>Buddy</h2>
+        <p class="breed">Black Labrador Retriever</p>
+        <p>Buddy is always hungry, loves every person he meets, and somehow manages to get dirty no matter what. A true lab through and through.</p>
+      </div>
+    </div>
+
+    <div class="dog-card">
+      <img src="images/Chula.png" alt="Chula the Chiweenie" />
+      <div class="dog-info">
+        <h2>Chula</h2>
+        <p class="breed">Chiweenie (Chihuahua & Dachshund mix)</p>
+        <p>Chula is the loud one of the bunch. She takes her job as neighborhood watch very seriously and will bark at absolutely anything that dares pass by the window.</p>
+      </div>
+    </div>
+
+    <div class="dog-card">
+      <img src="images/Brownie.jpeg" alt="Brownie the Chiweenie" />
+      <div class="dog-info">
+        <h2>Brownie</h2>
+        <p class="breed">Chiweenie (Chihuahua & Dachshund mix)</p>
+        <p>Brownie is Chula's sister and the quiet one. She's a daddy's girl through and through — always by her human daddy's side and wouldn't have it any other way.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>Made with love for Buddy, Chula & Brownie &hearts;</p>
+  </footer>
+
+</body>
+</html>
