@@ -483,34 +483,34 @@
   <div id="booking">
     <h2>Book a Stay</h2>
     <p class="subtitle">Fill out the form below and Justin will get back to you within 24 hours.</p>
-    <form class="booking-form">
+    <form class="booking-form" action="mailto:justinmcmurtrey740@gmail.com" method="post" enctype="text/plain">
 
       <div class="form-row">
         <div class="form-group">
           <label>Your Name</label>
-          <input type="text" placeholder="Jane Smith" />
+          <input type="text" name="Name" placeholder="Jane Smith" />
         </div>
         <div class="form-group">
           <label>Phone Number</label>
-          <input type="tel" placeholder="(512) 555-0000" />
+          <input type="tel" name="Phone" placeholder="(512) 555-0000" />
         </div>
       </div>
 
       <div class="form-row">
         <div class="form-group">
           <label>Email Address</label>
-          <input type="email" placeholder="jane@email.com" />
+          <input type="text" name="Email" placeholder="jane@email.com" />
         </div>
         <div class="form-group">
           <label>Pet's Name</label>
-          <input type="text" placeholder="Max" />
+          <input type="text" name="Pet Name" placeholder="Max" />
         </div>
       </div>
 
       <div class="form-row">
         <div class="form-group">
           <label>Service Needed</label>
-          <select>
+          <select name="Service">
             <option>Dog Sitting</option>
             <option>Dog Walking</option>
             <option>Overnight Stay</option>
@@ -519,7 +519,7 @@
         </div>
         <div class="form-group">
           <label>Pet Type</label>
-          <select>
+          <select name="Pet Type">
             <option>Dog</option>
             <option>Cat</option>
             <option>Other</option>
@@ -530,17 +530,17 @@
       <div class="form-row">
         <div class="form-group">
           <label>Start Date</label>
-          <input type="date" />
+          <input type="date" name="Start Date" />
         </div>
         <div class="form-group">
           <label>End Date</label>
-          <input type="date" />
+          <input type="date" name="End Date" />
         </div>
       </div>
 
       <div class="form-group">
         <label>Anything else we should know about your pet?</label>
-        <textarea placeholder="Allergies, medications, personality, special needs..."></textarea>
+        <textarea name="Notes" placeholder="Allergies, medications, personality, special needs..."></textarea>
       </div>
 
       <button type="submit">Request a Booking</button>
