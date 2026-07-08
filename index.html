@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Meeting My Dogs</title>
+  <title>Keep Austin Furry | Pet Sitting & Care</title>
   <style>
     * {
       margin: 0;
@@ -11,44 +11,217 @@
       box-sizing: border-box;
     }
 
+    :root {
+      --orange: #BF5700;
+      --dark-orange: #8C3E00;
+      --white: #FFFFFF;
+      --light-bg: #FDF6EE;
+      --gray: #555;
+      --light-gray: #f2f2f2;
+    }
+
     body {
       font-family: Georgia, serif;
-      background-color: #fdf6ee;
+      background-color: var(--light-bg);
       color: #333;
     }
 
-    header {
-      background-color: #3b2a1a;
-      color: #fff;
-      text-align: center;
-      padding: 50px 20px;
-    }
-
-    header h1 {
-      font-size: 3rem;
-      letter-spacing: 2px;
-    }
-
-    header p {
-      font-size: 1.2rem;
-      margin-top: 10px;
-      color: #d4b896;
-    }
-
-    .dogs-container {
+    /* NAV */
+    nav {
+      background-color: var(--orange);
+      padding: 16px 40px;
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 40px;
-      padding: 60px 20px;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav .logo {
+      color: var(--white);
+      font-size: 1.5rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    nav ul a {
+      color: var(--white);
+      text-decoration: none;
+      font-size: 1rem;
+      font-family: Arial, sans-serif;
+    }
+
+    nav ul a:hover {
+      text-decoration: underline;
+    }
+
+    /* HERO */
+    .hero {
+      background-color: var(--dark-orange);
+      color: var(--white);
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 16px;
+    }
+
+    .hero p {
+      font-size: 1.3rem;
+      margin-bottom: 30px;
+      color: #f5d8c0;
+    }
+
+    .hero a {
+      background-color: var(--white);
+      color: var(--orange);
+      padding: 14px 36px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+    }
+
+    .hero a:hover {
+      background-color: #f5d8c0;
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 70px 20px;
       max-width: 1100px;
       margin: 0 auto;
     }
 
-    .dog-card {
-      background: #fff;
+    section h2 {
+      font-size: 2.2rem;
+      color: var(--orange);
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    /* ABOUT */
+    .about-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .about-photo {
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 6px solid var(--orange);
+      background-color: #ddd;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      color: #888;
+      font-family: Arial, sans-serif;
+      flex-shrink: 0;
+    }
+
+    .about-text {
+      max-width: 580px;
+    }
+
+    .about-text p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: var(--gray);
+    }
+
+    /* SERVICES */
+    #services {
+      background-color: var(--light-gray);
+      max-width: 100%;
+      padding: 70px 20px;
+    }
+
+    #services .inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    #services h2 {
+      font-size: 2.2rem;
+      color: var(--orange);
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .services-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+
+    .service-card {
+      background: var(--white);
       border-radius: 16px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      padding: 36px 28px;
+      width: 280px;
+      text-align: center;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+      transition: transform 0.2s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .service-card .icon {
+      font-size: 3rem;
+      margin-bottom: 16px;
+    }
+
+    .service-card h3 {
+      font-size: 1.3rem;
+      color: var(--dark-orange);
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      font-size: 0.95rem;
+      color: var(--gray);
+      line-height: 1.6;
+    }
+
+    .service-card .price {
+      margin-top: 14px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: var(--orange);
+      font-family: Arial, sans-serif;
+    }
+
+    /* DOGS */
+    .dogs-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+
+    .dog-card {
+      background: var(--white);
+      border-radius: 16px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
       width: 300px;
       overflow: hidden;
       transition: transform 0.2s;
@@ -60,82 +233,334 @@
 
     .dog-card img {
       width: 100%;
-      height: 320px;
+      height: 280px;
       object-fit: cover;
     }
 
-    .dog-info {
-      padding: 24px;
+    .dog-card .dog-info {
+      padding: 20px;
     }
 
-    .dog-info h2 {
-      font-size: 1.8rem;
-      color: #3b2a1a;
+    .dog-card h3 {
+      font-size: 1.5rem;
+      color: var(--dark-orange);
       margin-bottom: 6px;
     }
 
-    .dog-info .breed {
-      font-size: 0.95rem;
-      color: #a0785a;
-      font-style: italic;
-      margin-bottom: 14px;
-    }
-
-    .dog-info p {
-      font-size: 1rem;
-      line-height: 1.6;
-      color: #555;
-    }
-
-    footer {
-      text-align: center;
-      padding: 30px;
-      background-color: #3b2a1a;
-      color: #d4b896;
+    .dog-card .breed {
       font-size: 0.9rem;
+      color: var(--orange);
+      font-style: italic;
+      margin-bottom: 10px;
+    }
+
+    .dog-card p {
+      font-size: 0.95rem;
+      color: var(--gray);
+      line-height: 1.6;
+    }
+
+    /* BOOKING FORM */
+    #booking {
+      background-color: var(--dark-orange);
+      max-width: 100%;
+      padding: 70px 20px;
+    }
+
+    #booking h2 {
+      font-size: 2.2rem;
+      color: var(--white);
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    #booking .subtitle {
+      text-align: center;
+      color: #f5d8c0;
+      margin-bottom: 40px;
+      font-family: Arial, sans-serif;
+    }
+
+    .booking-form {
+      max-width: 640px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .form-row {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .form-group label {
+      color: #f5d8c0;
+      font-family: Arial, sans-serif;
+      font-size: 0.9rem;
+      margin-bottom: 6px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      padding: 12px 16px;
+      border-radius: 8px;
+      border: none;
+      font-size: 1rem;
+      font-family: Arial, sans-serif;
+      background: var(--white);
+      color: #333;
+    }
+
+    .form-group textarea {
+      height: 100px;
+      resize: vertical;
+    }
+
+    .booking-form button {
+      background-color: var(--white);
+      color: var(--orange);
+      padding: 14px;
+      border: none;
+      border-radius: 30px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      font-family: Arial, sans-serif;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .booking-form button:hover {
+      background-color: #f5d8c0;
+    }
+
+    /* CONTACT */
+    .contact-info {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      font-size: 1.1rem;
+      color: var(--gray);
+      line-height: 2.2;
+    }
+
+    .contact-info a {
+      color: var(--orange);
+      text-decoration: none;
+    }
+
+    /* FOOTER */
+    footer {
+      background-color: #1a1a1a;
+      color: #aaa;
+      text-align: center;
+      padding: 30px 20px;
+      font-family: Arial, sans-serif;
+      font-size: 0.9rem;
+    }
+
+    footer span {
+      color: var(--orange);
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>Meeting My Dogs</h1>
-    <p>Three dogs, one happy home.</p>
-  </header>
+  <!-- NAV -->
+  <nav>
+    <div class="logo">Keep Austin Furry</div>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#dogs">My Dogs</a></li>
+      <li><a href="#booking">Book Now</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-  <div class="dogs-container">
-
-    <div class="dog-card">
-      <img src="images/Buddy.png" alt="Buddy the Black Lab" />
-      <div class="dog-info">
-        <h2>Buddy</h2>
-        <p class="breed">Black Labrador Retriever</p>
-        <p>Buddy is always hungry, loves every person he meets, and somehow manages to get dirty no matter what. A true lab through and through.</p>
-      </div>
-    </div>
-
-    <div class="dog-card">
-      <img src="images/Chula.png" alt="Chula the Chiweenie" />
-      <div class="dog-info">
-        <h2>Chula</h2>
-        <p class="breed">Chiweenie (Chihuahua & Dachshund mix)</p>
-        <p>Chula is the loud one of the bunch. She takes her job as neighborhood watch very seriously and will bark at absolutely anything that dares pass by the window.</p>
-      </div>
-    </div>
-
-    <div class="dog-card">
-      <img src="images/Brownie.jpeg" alt="Brownie the Chiweenie" />
-      <div class="dog-info">
-        <h2>Brownie</h2>
-        <p class="breed">Chiweenie (Chihuahua & Dachshund mix)</p>
-        <p>Brownie is Chula's sister and the quiet one. She's a daddy's girl through and through — always by her human daddy's side and wouldn't have it any other way.</p>
-      </div>
-    </div>
-
+  <!-- HERO -->
+  <div class="hero">
+    <h1>Keep Austin Furry</h1>
+    <p>Professional pet sitting & care in Austin, Texas</p>
+    <a href="#booking">Book a Stay</a>
   </div>
 
+  <!-- ABOUT -->
+  <section id="about">
+    <h2>About Justin</h2>
+    <div class="about-content">
+      <div class="about-photo">Photo coming soon</div>
+      <div class="about-text">
+        <p>Hi, I'm Justin — a proud pet owner and animal lover based in Austin, Texas. I share my home with three wonderful dogs: Buddy, Chula, and Brownie. I know how hard it is to leave your furry family member behind, which is why I treat every pet in my care like my own.</p>
+        <br/>
+        <p>Whether you need someone to walk your dog, check in on your cat, or provide a loving overnight stay, I'm here to help. Your pet's safety, happiness, and comfort is my top priority.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <div id="services">
+    <div class="inner">
+      <h2>Services</h2>
+      <div class="services-grid">
+
+        <div class="service-card">
+          <div class="icon">🐾</div>
+          <h3>Dog Sitting</h3>
+          <p>I'll watch your dog at my home while you're away. They'll get plenty of love, play time, and attention all day long.</p>
+          <p class="price">$25 / day</p>
+        </div>
+
+        <div class="service-card">
+          <div class="icon">🦮</div>
+          <h3>Dog Walking</h3>
+          <p>Daily walks to keep your pup active and happy. Available for 30 or 60 minute walks around your neighborhood.</p>
+          <p class="price">$18 / 30 min &nbsp;|&nbsp; $28 / 60 min</p>
+        </div>
+
+        <div class="service-card">
+          <div class="icon">🌙</div>
+          <h3>Overnight Stays</h3>
+          <p>Your pet stays with me overnight so they're never alone. Perfect for weekend trips or extended travel.</p>
+          <p class="price">$45 / night</p>
+        </div>
+
+        <div class="service-card">
+          <div class="icon">🏠</div>
+          <h3>Drop-In Visits</h3>
+          <p>I'll stop by your home to feed, play with, and check on your pet. Great for cats and small animals too.</p>
+          <p class="price">$15 / visit</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- MY DOGS -->
+  <section id="dogs">
+    <h2>Meet My Dogs</h2>
+    <div class="dogs-grid">
+
+      <div class="dog-card">
+        <img src="images/Buddy.png" alt="Buddy the Black Lab" />
+        <div class="dog-info">
+          <h3>Buddy</h3>
+          <p class="breed">Black Labrador Retriever</p>
+          <p>Buddy is 5 years old, always hungry, loves every person he meets, and somehow manages to get dirty no matter what.</p>
+        </div>
+      </div>
+
+      <div class="dog-card">
+        <img src="images/Chula.png" alt="Chula the Chiweenie" />
+        <div class="dog-info">
+          <h3>Chula</h3>
+          <p class="breed">Chiweenie (Chihuahua & Dachshund mix)</p>
+          <p>Chula is the loud one of the bunch. She takes her job as neighborhood watch very seriously and will bark at anything that passes by the window.</p>
+        </div>
+      </div>
+
+      <div class="dog-card">
+        <img src="images/Brownie.jpeg" alt="Brownie the Chiweenie" />
+        <div class="dog-info">
+          <h3>Brownie</h3>
+          <p class="breed">Chiweenie (Chihuahua & Dachshund mix)</p>
+          <p>Brownie is Chula's sister and the quiet one. She's a daddy's girl through and through — always by her human daddy's side.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- BOOKING -->
+  <div id="booking">
+    <h2>Book a Stay</h2>
+    <p class="subtitle">Fill out the form below and Justin will get back to you within 24 hours.</p>
+    <form class="booking-form">
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Your Name</label>
+          <input type="text" placeholder="Jane Smith" />
+        </div>
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" placeholder="(512) 555-0000" />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" placeholder="jane@email.com" />
+        </div>
+        <div class="form-group">
+          <label>Pet's Name</label>
+          <input type="text" placeholder="Max" />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Service Needed</label>
+          <select>
+            <option>Dog Sitting</option>
+            <option>Dog Walking</option>
+            <option>Overnight Stay</option>
+            <option>Drop-In Visit</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Pet Type</label>
+          <select>
+            <option>Dog</option>
+            <option>Cat</option>
+            <option>Other</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Start Date</label>
+          <input type="date" />
+        </div>
+        <div class="form-group">
+          <label>End Date</label>
+          <input type="date" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Anything else we should know about your pet?</label>
+        <textarea placeholder="Allergies, medications, personality, special needs..."></textarea>
+      </div>
+
+      <button type="submit">Request a Booking</button>
+
+    </form>
+  </div>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="contact-info">
+      <p>📍 Austin, Texas</p>
+      <p>📧 <a href="mailto:justinmcmurtrey740@gmail.com">justinmcmurtrey740@gmail.com</a></p>
+      <p>Follow us on social media for daily pet photos!</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
   <footer>
-    <p>Made with love for Buddy, Chula & Brownie &hearts;</p>
+    <p>&copy; 2026 <span>Keep Austin Furry</span> &mdash; All rights reserved.</p>
   </footer>
 
 </body>
